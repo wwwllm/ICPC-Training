@@ -1,0 +1,1 @@
+{"name":"Local: 多重背包问题 I","url":"d:\\C++\\大一下\\Acwing\\多重背包问题 I.cpp","tests":[{"id":1741665271523,"input":"4 5\n1 2 3\n2 4 1\n3 4 3\n4 5 2","output":"10"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\Acwing\\多重背包问题 I.cpp","group":"local","local":true}

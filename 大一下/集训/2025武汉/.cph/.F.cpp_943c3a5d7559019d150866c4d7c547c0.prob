@@ -1,0 +1,1 @@
+{"name":"Local: F","url":"d:\\C++\\大一下\\集训\\2025武汉\\F.cpp","tests":[{"id":1748160351841,"input":"2\n5 4\n3 0\n2 3\n3 1\n1 3\n2 1\n2 20250427\n1000000000 1000000000\n114514 1919810\n","output":"10\n628956724\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\集训\\2025武汉\\F.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: G","url":"d:\\C++\\25暑假牛客多校\\1\\G.cpp","tests":[{"id":1752553306635,"input":"10 3\nhelloworld\nfollow 1\necho 2\nnowgold 4","output":"10\n2\n6"},{"id":1752553595589,"input":"\n10 1\nhelloworld\nfollow 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\25暑假牛客多校\\1\\G.cpp","group":"local","local":true}

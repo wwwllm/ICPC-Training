@@ -1,0 +1,1 @@
+{"name":"Local: H","url":"d:\\C++\\大一下\\学校oj\\现场赛\\H.cpp","tests":[{"id":1742725850306,"input":"5 3\n0 0\n1 1\n2 2\n3 3\n4 4\n3 1\n3 2\n3 5","output":"0\n1\nCKW_QAQ"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\学校oj\\现场赛\\H.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: E","url":"d:\\C++\\大一下\\codeforces\\div.3(1009)2025.3.11\\E.cpp","tests":[{"id":1741745427128,"input":"2\n6\n\n5\n\n4\n\n0\n\n3\n","output":"\n\n? 1 2 3\n\n? 1 5 3\n\n? 2 5 6\n\n! 2 5 6\n\n! 1 2 3\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\codeforces\\div.3(1009)2025.3.11\\E.cpp","group":"local","local":true}

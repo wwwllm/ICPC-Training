@@ -1,0 +1,1 @@
+{"name":"Local: 图中点的层次","url":"d:\\C++\\大一下\\Acwing\\图中点的层次.cpp","tests":[{"id":1741412530564,"input":"4 5\n1 2\n2 3\n3 4\n1 3\n1 4","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\Acwing\\图中点的层次.cpp","group":"local","local":true}

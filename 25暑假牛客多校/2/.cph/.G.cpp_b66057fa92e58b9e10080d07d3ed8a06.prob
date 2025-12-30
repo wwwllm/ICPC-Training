@@ -1,0 +1,1 @@
+{"name":"Local: G","url":"d:\\C++\\25暑假牛客多校\\2\\G.cpp","tests":[{"id":1753078572909,"input":"3\n4 0 0\n1 0\n0 1\n-1 0\n0 -1\n3 0 0\n1 0\n1 -1\n2 0\n3 0 0\n0 0\n1 -1\n1 1","output":"1.570796326794897\n6.283185307179586\n4.712388980384690"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\25暑假牛客多校\\2\\G.cpp","group":"local","local":true}

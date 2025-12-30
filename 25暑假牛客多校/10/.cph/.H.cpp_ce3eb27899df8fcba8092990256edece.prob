@@ -1,0 +1,1 @@
+{"name":"Local: H","url":"d:\\C++\\25暑假牛客多校\\10\\H.cpp","tests":[{"id":1755146600057,"input":"3\n1+2=\n1*1=\n5-3=","output":"Yes\nNo\nNo"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\25暑假牛客多校\\10\\H.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: 01背包问题","url":"d:\\C++\\大一下\\Acwing\\01背包问题.cpp","tests":[{"id":1741597768811,"input":"4 5\n1 2\n2 4\n3 4\n4 5","output":"8"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\Acwing\\01背包问题.cpp","group":"local","local":true}

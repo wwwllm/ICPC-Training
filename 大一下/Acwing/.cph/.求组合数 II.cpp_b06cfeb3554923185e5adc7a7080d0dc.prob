@@ -1,0 +1,1 @@
+{"name":"Local: 求组合数 II","url":"d:\\C++\\大一下\\Acwing\\求组合数 II.cpp","tests":[{"id":1742282532734,"input":"3\n3 1\n5 3\n2 2","output":"3 \n10\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\Acwing\\求组合数 II.cpp","group":"local","local":true}

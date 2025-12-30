@@ -1,0 +1,1 @@
+{"name":"Local: BlueAI","url":"d:\\C++\\大一下\\lanqiao\\BlueAI.cpp","tests":[{"id":1744355834214,"input":"5\nL...L\n.Q...\n.Q...\n.Q...\n.....","output":"2\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\lanqiao\\BlueAI.cpp","group":"local","local":true}

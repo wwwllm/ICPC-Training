@@ -1,0 +1,1 @@
+{"name":"Local: 雪花雪花雪花","url":"d:\\C++\\大一下\\Acwing\\雪花雪花雪花.cpp","tests":[{"id":1742541830751,"input":"2\n1 2 3 4 5 6\n4 3 2 1 6 5","output":"Twin snowflakes found."}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\Acwing\\雪花雪花雪花.cpp","group":"local","local":true}

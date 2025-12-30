@@ -1,0 +1,1 @@
+{"name":"Local: 扩展KMP","url":"d:\\C++\\板子\\扩展KMP.cpp","tests":[{"id":1743657497457,"input":"aaaabaa\naaaaa","output":"6\n21\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\板子\\扩展KMP.cpp","group":"local","local":true}

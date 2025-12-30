@@ -1,0 +1,1 @@
+{"name":"Local: L","url":"d:\\C++\\大一下\\13届重庆市赛\\L.cpp","tests":[{"id":1746969200789,"input":"6\n Push 1\n Repeat\n Pop\n Push 2\n Repeat\n Pop","output":"1\n2\n1\n3\n6\n4\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\13届重庆市赛\\L.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: sta","url":"d:\\C++\\对拍\\sta.cpp","tests":[{"id":1749303681067,"input":"8\n0 2\n0 8\n1 3\n6 22\n128 137\n69 98\n115 127\n0 1073741823","output":"2\n1\n3\n3\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\对拍\\sta.cpp","group":"local","local":true}

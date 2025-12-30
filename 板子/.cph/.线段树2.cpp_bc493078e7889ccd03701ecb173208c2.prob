@@ -1,0 +1,1 @@
+{"name":"Local: 线段树2","url":"d:\\C++\\板子\\线段树2.cpp","tests":[{"id":1743068202945,"input":"6 6\n1 1 4 5 1 4\n1 1 2 6\n2 3 4 2\n3 1 4\n3 2 3\n1 1 6 -1\n3 1 6\n","output":"7\n6\n-1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\板子\\线段树2.cpp","group":"local","local":true}

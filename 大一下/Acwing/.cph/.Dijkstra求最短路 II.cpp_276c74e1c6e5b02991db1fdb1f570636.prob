@@ -1,0 +1,1 @@
+{"name":"Local: Dijkstra求最短路 II","url":"d:\\C++\\大一下\\Acwing\\Dijkstra求最短路 II.cpp","tests":[{"id":1741418584806,"input":"3 3\n1 2 2\n2 3 1\n1 3 4","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\Acwing\\Dijkstra求最短路 II.cpp","group":"local","local":true}

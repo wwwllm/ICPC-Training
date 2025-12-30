@@ -1,0 +1,1 @@
+{"name":"Local: E","url":"d:\\C++\\大一寒假\\vjudge\\3\\E.cpp","tests":[{"id":1739177775161,"input":"9\n1\n2\n3\n6\n13\n15\n255\n10101\n1000000000000000000\n","output":"NO\nNO\nNO\nNO\nYES\nYES\nYES\nYES\nNO\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一寒假\\vjudge\\3\\E.cpp","group":"local","local":true}

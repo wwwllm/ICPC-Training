@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"d:\\C++\\25暑假牛客多校\\2\\A.cpp","tests":[{"id":1752826573362,"input":"3\n3\n1 0 1\n3\n0 0 0\n3\n1 -1 1","output":"2\n0\n3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\25暑假牛客多校\\2\\A.cpp","group":"local","local":true}

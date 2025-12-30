@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"d:\\C++\\大一下\\atcoder\\abc(2025.5.17)\\A.cpp","tests":[{"id":1747483403792,"input":"22 40 22 30\n","output":""},{"id":1747483431248,"input":"22 40 22 45\n","output":"No"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\atcoder\\abc(2025.5.17)\\A.cpp","group":"local","local":true}

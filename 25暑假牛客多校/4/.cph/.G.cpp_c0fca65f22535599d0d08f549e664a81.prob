@@ -1,0 +1,1 @@
+{"name":"Local: G","url":"d:\\C++\\25暑假牛客多校\\4\\G.cpp","tests":[{"id":1753336559772,"input":"()()","output":"249561089"},{"id":1753336997309,"input":"((()(()())))","output":"252\n936828929"},{"id":1753337151951,"input":"()(()(()))","output":"826671105"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\25暑假牛客多校\\4\\G.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: 斐波那契数列","url":"d:\\C++\\板子\\.cph\\斐波那契数列.cpp","tests":[{"id":1741857852008,"input":"3","output":"2"},{"id":1741859341099,"input":"4","output":"3"},{"id":1741859362016,"input":"5","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\板子\\.cph\\斐波那契数列.cpp","group":"local","local":true}

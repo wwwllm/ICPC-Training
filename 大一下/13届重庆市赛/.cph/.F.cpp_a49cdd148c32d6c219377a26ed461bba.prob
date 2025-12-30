@@ -1,0 +1,1 @@
+{"name":"Local: F","url":"d:\\C++\\大一下\\13届重庆市赛\\F.cpp","tests":[{"id":1746973502688,"input":"5\n6 5 1000\n6 500 1000\n6 5000 1000\n1234 4009 4039\n6 6 6","output":"Win\nWIN\nnowin\nWIN\nnowin"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\13届重庆市赛\\F.cpp","group":"local","local":true}

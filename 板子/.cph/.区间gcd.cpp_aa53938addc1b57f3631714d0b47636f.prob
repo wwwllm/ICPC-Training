@@ -1,0 +1,1 @@
+{"name":"Local: 区间gcd","url":"d:\\C++\\板子\\区间gcd.cpp","tests":[{"id":1752404214201,"input":"5 3\n4 12 3 6 7\n1 3\n2 3\n5 5\n","output":"1\n3\n7\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\板子\\区间gcd.cpp","group":"local","local":true}

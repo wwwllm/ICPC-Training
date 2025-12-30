@@ -1,0 +1,1 @@
+{"name":"Local: 差分","url":"d:\\C++\\大一下\\Acwing\\差分.cpp","tests":[{"id":1741062169188,"input":"6 3\n1 2 2 1 2 1\n1 3 1\n3 5 1\n1 6 1","output":"3 4 5 3 4 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\Acwing\\差分.cpp","group":"local","local":true}

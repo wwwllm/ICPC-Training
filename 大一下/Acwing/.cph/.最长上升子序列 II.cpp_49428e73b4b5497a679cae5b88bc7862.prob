@@ -1,0 +1,1 @@
+{"name":"Local: 最长上升子序列 II","url":"d:\\C++\\大一下\\Acwing\\最长上升子序列 II.cpp","tests":[{"id":1741671379293,"input":"7\n3 1 2 1 8 5 6","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\Acwing\\最长上升子序列 II.cpp","group":"local","local":true}

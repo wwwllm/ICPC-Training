@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"d:\\C++\\大一寒假\\vjudge\\3\\A.cpp","tests":[{"id":1739172090589,"input":"5\n+X+\nOXO\nOX.\nO+.\n+OX\nX+O\n.XO\nOX.\n+++\nO.+\nX.O\n+..\n.++\nX.O\n+..\n","output":"X\nO\n+\nDRAW\nDRAW\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一寒假\\vjudge\\3\\A.cpp","group":"local","local":true}

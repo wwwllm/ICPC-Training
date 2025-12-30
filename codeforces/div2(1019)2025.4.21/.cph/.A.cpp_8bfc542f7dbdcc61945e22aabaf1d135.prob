@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"d:\\C++\\大一下\\codeforces\\div2(1019)2025.4.21\\A.cpp","tests":[{"id":1745246335681,"input":"3\n3\n1 2 3\n5\n3 1 4 1 5\n1\n1","output":"3\n4\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\codeforces\\div2(1019)2025.4.21\\A.cpp","group":"local","local":true}

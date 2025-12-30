@@ -1,0 +1,1 @@
+{"name":"Local: I","url":"d:\\C++\\大一下\\集训\\2025常熟理工学院天梯选拔赛\\I.cpp","tests":[{"id":1743858534831,"input":"5 50\n1 1 2 3\n0 10 20 -10 -50","output":"20"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\集训\\2025常熟理工学院天梯选拔赛\\I.cpp","group":"local","local":true}

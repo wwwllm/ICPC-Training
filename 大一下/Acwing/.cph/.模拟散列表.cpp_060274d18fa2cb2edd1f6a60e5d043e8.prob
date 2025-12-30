@@ -1,0 +1,1 @@
+{"name":"Local: 模拟散列表","url":"d:\\C++\\大一下\\Acwing\\模拟散列表.cpp","tests":[{"id":1741246595951,"input":"5\nI 1\nI 2\nI 3\nQ 2\nQ 5","output":"Yes\nNo"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\Acwing\\模拟散列表.cpp","group":"local","local":true}

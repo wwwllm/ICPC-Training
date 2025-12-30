@@ -1,0 +1,1 @@
+{"name":"Local: Sum in Binary Tree","url":"d:\\C++\\大一寒假\\CF\\Sum in Binary Tree.cpp","tests":[{"id":1738735694469,"input":"6\n3\n10\n37\n1\n10000000000000000\n15\n","output":"4\n18\n71\n1\n19999999999999980\n26\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一寒假\\CF\\Sum in Binary Tree.cpp","group":"local","local":true}

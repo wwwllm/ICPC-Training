@@ -1,0 +1,1 @@
+{"name":"Local: 掩体计划","url":"d:\\C++\\大一下\\lanqiao\\掩体计划.cpp","tests":[{"id":1740897317156,"input":"5\n1 2 \n1 3\n1 4\n2 5\n2 \n4 5","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\lanqiao\\掩体计划.cpp","group":"local","local":true}

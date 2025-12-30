@@ -1,0 +1,1 @@
+{"name":"Local: C","url":"d:\\C++\\大一下\\codeforces\\1200-1400\\C. Turtle and Good Pairs.cpp","tests":[{"id":1747834839244,"input":"5\n3\nabc\n5\nedddf\n6\nturtle\n8\npppppppp\n10\ncodeforces\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\codeforces\\1200-1400\\C. Turtle and Good Pairs.cpp","group":"local","local":true}

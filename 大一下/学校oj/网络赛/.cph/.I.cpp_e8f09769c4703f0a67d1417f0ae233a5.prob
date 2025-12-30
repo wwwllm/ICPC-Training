@@ -1,0 +1,1 @@
+{"name":"Local: I","url":"d:\\C++\\大一下\\学校oj\\网络赛\\I.cpp","tests":[{"id":1742024286730,"input":"7\n1\n1\n1\n1\n1\n1\n1\n1 3\n1 3\n3 1 2 5\n3 5 6 7\n2 3 4\n1 4\n1 4 ","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\学校oj\\网络赛\\I.cpp","group":"local","local":true}

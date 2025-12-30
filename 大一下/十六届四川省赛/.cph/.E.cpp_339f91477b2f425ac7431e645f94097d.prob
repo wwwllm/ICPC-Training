@@ -1,0 +1,1 @@
+{"name":"Local: E","url":"d:\\C++\\大一下\\十六届四川省赛\\E.cpp","tests":[{"id":1745827181855,"input":"2\n4 4\nCLD.\nUDCL\nDCLD\nCLRC\n2 3\nDRC\nCLU\n","output":"Yes\nNo\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\十六届四川省赛\\E.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: C","url":"d:\\C++\\大一下\\codeforces\\1500-1700\\C. Trapmigiano Reggiano.cpp","tests":[{"id":1748668207260,"input":"4\n1 1 1\n2 1 2\n1 2\n3 2 2\n1 2\n2 3\n6 1 4\n1 2\n1 3\n4 5\n5 6\n1 4\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一下\\codeforces\\1500-1700\\C. Trapmigiano Reggiano.cpp","group":"local","local":true}

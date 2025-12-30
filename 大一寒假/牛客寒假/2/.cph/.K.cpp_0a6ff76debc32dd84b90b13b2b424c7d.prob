@@ -1,0 +1,1 @@
+{"name":"Local: K","url":"d:\\C++\\大一寒假\\牛客寒假\\2\\K.cpp","tests":[{"id":1747372716755,"input":"6 6\n000000\n000000\n001100\n001100\n000000\n000000","output":"8"},{"id":1747373120431,"input":"2 3\n110\n000","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\大一寒假\\牛客寒假\\2\\K.cpp","group":"local","local":true}
