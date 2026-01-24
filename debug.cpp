@@ -17,42 +17,7 @@ void solve()
     vector<int> a(n + 1);
     for (int i = 1; i <= n; i++)
         cin >> a[i];
-    vector dp(n + 1, vector<int>(n + 1)); // 涂红的元素最后一个是i，...是j
-    dp[0][0] = 1;
-    for (int i = 1; i <= n; i++)
-    {
-        vector cur(n + 1, vector<int>(n + 1));
-        for (int j = 0; j <= n; j++)
-        {
-            for (int k = 0; k <= n; k++)
-            {
-                int val = dp[j][k];
-                cur[j][k] += val;
-                cur[j][k] %= p;
-                if (j == 0 or j <= a[i])
-                {
-                    cur[a[i]][k] += val;
-                    cur[a[i]][k] %= p;
-                }
-                else if (k == 0 or k <= a[i])
-                {
-                    cur[j][a[i]] += val;
-                    cur[j][a[i]] %= p;
-                }
-            }
-        }
-        dp = cur;
-    }
-    int ans = 0;
-    for (int j = 0; j <= n; j++)
-    {
-        for (int k = 0; k <= n; k++)
-        {
-            ans += dp[j][k];
-            ans %= p;
-        }
-    }
-    cout << ans << endl;
+    ranges::sort(a.begin(), a.end());
 }
 
 signed main()
