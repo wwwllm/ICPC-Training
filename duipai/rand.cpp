@@ -21,12 +21,12 @@ signed main()
 {
 	cout << 1 << '\n';
 
-	int n = randINT(1, 20);
-	cout << n << '\n';
+	int n = randINT(1, 10), k = randINT(1, 10);
+	cout << n << ' ' << k << '\n';
 	for (int i = 1; i <= n; i++)
 	{
-			int a = randINT(1, 20);
-			cout << a << ' ';
+		int a = randINT(0, n);
+		cout << a << ' ';
 	}
 	cout << '\n';
 	return 0;

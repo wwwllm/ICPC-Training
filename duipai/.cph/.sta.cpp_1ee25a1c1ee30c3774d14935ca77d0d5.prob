@@ -1,0 +1,1 @@
+{"name":"Local: sta","url":"e:\\c++\\duipai\\sta.cpp","tests":[{"id":1770199784191,"input":"1\n7 1\n5 6 1 3 4 0 6 \n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\c++\\duipai\\sta.cpp","group":"local","local":true}

@@ -1,35 +1,80 @@
 #include <bits/stdc++.h>
+#define int long long
+#define pb push_back
 using namespace std;
 
 void solve()
 {
-    int n;
-    cin >> n;
-    vector<int> a(n), pre(n);
-    for (auto &x : a)
-        cin >> x, x %= 3;
-    pre[0] = a[0] % 3;
-    for (int i = 1; i < n; i++)
-        pre[i] = (pre[i - 1] + a[i]) % 3;
-    for (int l = 0; l < n - 2; l++)
+    int n, k;
+    cin >> n >> k;
+    vector<int> a(n + 1), ne(n + 1);
+    int m = 0;
+    for (int i = 1; i <= n; i++)
     {
-        for (int r = l + 1; r < n - 1; r++)
+        cin >> a[i];
+        if (a[i])
+            m++;
+        ne[i] = max(ne[i - 1], a[i] + i);
+    }
+    if (m <= k)
+    {
+        cout << 0 << '\n';
+        return;
+    }
+    auto check = [&](int x) -> bool
+    {
+        int i = 1;
+        while (i <= n && a[i] == 0)
+            i++;
+        int cnt = 1;
+        int ti = 0;
+        while (i <= n)
         {
-            int sum1 = pre[l], sum2 = pre[r] - pre[l], sum3 = pre[n - 1] - pre[r];
-            if (((sum1 == sum2 && sum2 == sum3) || (sum1 != sum2 && sum2 != sum3 && sum1 != sum3)))
+            ti++;
+            i = ne[i];
+            if (i >= n)
+                break;
+            if (i == ne[i])
             {
-                cout << l + 1 << ' ' << r + 1 << '\n';
-                return;
+                while (i <= n && i == ne[i])
+                    i++;
+                if (i <= n)
+                    ti = 0;
+                cnt++;
+            }
+            else
+            {
+                if (ti == x)
+                {
+                    i++;
+                    while (i <= n && a[i] == 0)
+                        i++;
+                    if (i <= n)
+                        ti = 0;
+                    cnt++;
+                }
             }
         }
+        return cnt <= k;
+    };
+    int l = 0, r = n;
+    while (l + 1 != r)
+    {
+        int mid = l + r >> 1;
+        if (check(mid))
+            r = mid;
+        else
+            l = mid;
     }
-    cout << 0 << ' ' << 0 << '\n';
-    return;
+    if (!check(r))
+        cout << -1 << '\n';
+    else
+        cout << r << '\n';
 }
 signed main()
 {
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    int t;
+    int t = 1;
     cin >> t;
     while (t--)
         solve();
