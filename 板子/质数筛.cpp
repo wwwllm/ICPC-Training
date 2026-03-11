@@ -1,11 +1,11 @@
-// 质数筛
+
 #include <bits/stdc++.h>
 using namespace std;
 
 const int maxn = 1e5 + 5;
 int prime[maxn], ans = 0;
 void sieve(int n, bool a[])
-{ // 普通筛:时间复杂度：O(nlogn)
+{ 
 	a[0] = a[1] = 1;
 	memset(a, 0, sizeof(bool) * n + 1);
 	for (int i = 2; i * i <= n; i++)
@@ -21,8 +21,7 @@ void sieve(int n, bool a[])
 	}
 }
 void Eratothenes_sieve(int n, bool a[])
-{ // 埃氏筛:时间复杂度：O(nloglogn)
-	// 寻找不超过n的所有质数，数组a来存放结果，a[i]==0表示质数
+{ 
 	a[0] = a[1] = 1;
 	memset(a, 0, sizeof(bool) * n + 1);
 	for (int i = 2; i * i <= n; i++)
@@ -38,7 +37,7 @@ void Eratothenes_sieve(int n, bool a[])
 	}
 }
 void Eratothenes_sievepro(int n, bool a[])
-{ // 埃氏筛优化
+{ // 锟斤拷锟斤拷筛锟脚伙拷
 	a[0] = a[1] = 1;
 	memset(a, 0, sizeof(bool) * n + 1);
 	for (int i = 2; i * i <= n; i++)
@@ -52,7 +51,7 @@ void Eratothenes_sievepro(int n, bool a[])
 	}
 }
 void Euler_sieve(int n, bool a[])
-{ // 欧拉筛 ：时间复杂度：O(n)
+{ 
 	a[0] = a[1] = 1;
 	memset(a, 0, sizeof(bool) * n + 1);
 	for (int i = 2; i <= n; i++)
@@ -63,7 +62,7 @@ void Euler_sieve(int n, bool a[])
 		{
 			a[prime[j] * i] = 1;
 			if (i % prime[j] == 0)
-				break; // 保证prime[j]为最小质因数
+				break; // 锟斤拷证prime[j]为锟斤拷小锟斤拷锟斤拷锟斤拷
 		}
 	}
 }
