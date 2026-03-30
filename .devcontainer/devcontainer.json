@@ -1,0 +1,25 @@
+{
+    "name": "ACM C++ (GCC 15)",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            // 在容器内自动安装的插件
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                "formulahendry.code-runner",
+                "christian-kohler.path-intellisense"
+            ],
+            "settings": {
+                // 设置 C++ 标准为 C++23 或更高
+                "C_Cpp.default.cppStandard": "c++23",
+                "files.associations": {
+                    "iostream": "cpp"
+                }
+            }
+        }
+    },
+    "remoteUser": "root"
+}

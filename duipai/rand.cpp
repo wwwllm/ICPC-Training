@@ -21,13 +21,7 @@ signed main()
 {
 	cout << 1 << '\n';
 
-	int n = randINT(1, 10), k = randINT(1, 10);
-	cout << n << ' ' << k << '\n';
-	for (int i = 1; i <= n; i++)
-	{
-		int a = randINT(0, n);
-		cout << a << ' ';
-	}
-	cout << '\n';
+	int r = randINT(1, 100000);
+	cout << r << '\n';
 	return 0;
 }

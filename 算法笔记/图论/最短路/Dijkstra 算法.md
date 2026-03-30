@@ -69,7 +69,7 @@ signed main()
 ```
 
 2. 堆优化Dijkstra 算法
-```
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 

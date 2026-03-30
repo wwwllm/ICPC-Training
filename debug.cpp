@@ -1,33 +1,76 @@
-#include<bits/stdc++.h>
-#define EL puts("Elaina")
-typedef long long ll;
+#include <bits/stdc++.h>
 using namespace std;
-const int maxn=3e5+5,block=600;
-int n,k,Q,c[maxn],cnt[maxn];ll ans[maxn];
-array<int,26> a[maxn],b[maxn];
-char s[maxn];
-struct query{
-	int l,r,id;
-	bool operator <(const query &a)const{
-		int i=l/block,j=a.l/block;
-		return i!=j?i<j:i&1?a.r<r:r<a.r;
-	}
-}q[maxn];
-inline void MyDearMoments(){
-	scanf("%d%d%d%s",&n,&k,&Q,s+1);
-	for(int i=1;i<=n;++i)a[i]=a[i-1],(++a[i][s[i]-'a'])%=k,b[i]=a[i];
-	sort(b,b+n+1);int m=unique(b,b+n+1)-b-1;
-	for(int i=0;i<=n;++i)c[i]=lower_bound(b,b+m+1,a[i])-b;
-	for(int i=1;i<=Q;++i)scanf("%d%d",&q[i].l,&q[i].r),--q[i].l,q[i].id=i;
-	sort(q+1,q+Q+1);
-	int l=0,r=-1;ll tmp=0;
-	for(int i=1;i<=Q;++i){
-		while(r<q[i].r)tmp+=cnt[c[++r]]++;
-		while(l>q[i].l)tmp+=cnt[c[--l]]++;
-		while(l<q[i].l)tmp-=--cnt[c[l++]];
-		while(r>q[i].r)tmp-=--cnt[c[r--]];
-		ans[q[i].id]=tmp;
-	}
-	for(int i=1;i<=Q;++i)printf("%lld\n",ans[i]);
+
+struct DSU
+{
+    vector<int> f, siz;
+    int cnt;
+
+    DSU() {}
+    DSU(int n) { init(n); }
+
+    void init(int n)
+    {
+        f.resize(n);
+        iota(f.begin(), f.end(), 0);
+        siz.assign(n, 1);
+        cnt = n;
+    }
+
+    int find(int x)
+    {
+        while (x != f[x])
+        {
+            x = f[x] = f[f[x]];
+        }
+        return x;
+    }
+
+    bool merge(int x, int y)
+    {
+        x = find(x);
+        y = find(y);
+        if (x == y)
+            return 0;
+        siz[x] += siz[y];
+        cnt--;
+        f[y] = x;
+        return 1;
+    }
+
+    int esize(int x)
+    {
+        return siz[find(x)];
+    }
+
+    int count()
+    {
+        return cnt;
+    }
+};
+signed main()
+{
+    int n, m;
+    cin >> n >> m;
+    vector<array<int, 3>> a(m);
+    for (auto &[x, y, z] : a)
+        cin >> x >> y >> z;
+    ranges::sort(a, [&](array<int, 3> &a, array<int, 3> &b)
+                 { return a[2] > b[2]; });
+    DSU dsu(2 * n + 1);
+    int ans = 0;
+    for (auto [x, y, z] : a)
+    {
+        int xx = x + n, yy = y + n;
+        if (dsu.find(x) == dsu.find(y))
+        {
+            cout << z << '\n';
+            return 0;
+        }
+        else
+        {
+            dsu.merge(y, xx), dsu.merge(x, yy);
+        }
+    }
+    cout << ans << '\n';
 }
-int main(){return MyDearMoments(),0;}

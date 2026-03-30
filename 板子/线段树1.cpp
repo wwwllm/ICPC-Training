@@ -13,7 +13,7 @@ void lazy(int idx, int v, int n)
 }
 void down(int idx, int ln, int rn)
 {
-    if (ad[idx]!=0)
+    if (ad[idx] != 0)
     {
         lazy(idx << 1, ad[idx], ln);
         lazy(idx << 1 | 1, ad[idx], rn);

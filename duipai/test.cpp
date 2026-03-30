@@ -1,75 +1,61 @@
 #include <bits/stdc++.h>
 #define int long long
-#define pb push_back
 using namespace std;
+typedef long long LL;
 
+// 4 8 12 16 24 28 32 36 40 44 48 52 56 64 68 72 76 80 84 88 92 96 104 108 112 116 120 124 128 132 136 144 148 152 156 160 164 168 172 176 184 188 192 196 204 208 212 216 224 228 232 236 240 244 248 252 256 264 268 272 276 280 284 288 292 296 304 308 312 316 320 324 328 332 336 344 348 352 356 360 364 368 372 376 384 388 392 396 400
+vector<int> a = {
+    1, 2, 3, 5, 6, 7, 9, 10, 11, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 29, 30, 31, 33, 34, 35, 37, 38, 39, 41, 42, 43, 45, 46, 47, 49, 50, 51, 53, 54, 55, 57, 58, 59, 60, 61, 62, 63, 65, 66, 67, 69, 70, 71, 73, 74, 75, 77, 78, 79, 81, 82, 83, 85, 86, 87, 89, 90, 91, 93, 94, 95, 97, 98, 99};
+// 1575
+inline LL calc(LL k)
+{
+    LL x = 4, y = 100, ans = 0;
+    for (int i = 1; i <= 9; i++)
+    {
+        if (y > k)
+            break;
+        ans += k / x;
+        ans -= k / y;
+        x *= 100;
+        y *= 100;
+    }
+    ans += k / x;
+    if (x <= k)
+    {
+        x *= 100;
+        ans += k / x;
+    }
+    return ans;
+}
 void solve()
 {
-    int n, k;
-    cin >> n >> k;
-    vector<int> a(n + 1), ne(n + 1);
-    int m = 0;
-    for (int i = 1; i <= n; i++)
-    {
-        cin >> a[i];
-        if (a[i])
-            m++;
-        ne[i] = max(ne[i - 1], a[i] + i);
-    }
-    if (m <= k)
-    {
-        cout << 0 << '\n';
-        return;
-    }
-    auto check = [&](int x) -> bool
-    {
-        int i = 1;
-        while (i <= n && a[i] == 0)
-            i++;
-        int cnt = 1;
-        int ti = 0;
-        while (i <= n)
-        {
-            ti++;
-            i = ne[i];
-            if (i >= n)
-                break;
-            if (i == ne[i])
-            {
-                while (i <= n && i == ne[i])
-                    i++;
-                if (i <= n)
-                    ti = 0;
-                cnt++;
-            }
-            else
-            {
-                if (ti == x)
-                {
-                    i++;
-                    while (i <= n && a[i] == 0)
-                        i++;
-                    if (i <= n)
-                        ti = 0;
-                    cnt++;
-                }
-            }
-        }
-        return cnt <= k;
-    };
-    int l = 0, r = n;
-    while (l + 1 != r)
-    {
-        int mid = l + r >> 1;
-        if (check(mid))
-            r = mid;
-        else
-            l = mid;
-    }
-    if (!check(r))
-        cout << -1 << '\n';
-    else
-        cout << r << '\n';
+    // auto check = [&](int x)
+    // {
+    //     int a = 4, b = 10;
+    //     int cnt = 0;
+    //     while (a <= x)
+    //     {
+    //         if (x % a == 0 && x % b != 0)
+    //             cnt++;
+    //         a = a * 10, b = b * 10;
+    //     }
+    //     return cnt == 1;
+    // };
+    // int cnt = 0;
+    // for (int i = 1; i <= 2024; i++)
+    // {
+    //     if (!check(i))
+    //     {
+    //         cnt++;
+    //     }
+    // }
+    // cerr << cnt << '\n';
+    int k;
+    cin >> k;
+    // k += 1575;
+    int l = 0, r = 1e18;
+
+    cout << calc(k) << '\n';
 }
 signed main()
 {

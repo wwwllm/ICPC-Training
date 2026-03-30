@@ -6,6 +6,8 @@
       "-O2",
       "-Wall",
       "-Wextra",
+      "-Wshadow",
+      "-DLOCAL",
       "${file}",
       "-g",
       "-o",

@@ -1,0 +1,91 @@
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+
+const int inf = 1e18;
+struct Info
+{
+    int cnt, len;
+    int size;
+    Info() : cnt(0), len(0) {};
+};
+struct SegTree
+{
+    int n;
+    vector<Info> info;
+    vector<int> vy;
+    SegTree(vector<int> vy) : n(vy.size()), info(4 * vy.size()), vy(vy) {};
+    void pull(int p, int l, int r)
+    {
+        if (info[p].cnt)
+            info[p].len = vy[r] - vy[l];
+        else
+        {
+            if (r - l == 1)
+                info[p].len = 0;
+            else
+                info[p].len = info[p << 1 | 1].len + info[p << 1].len;
+        }
+    }
+    void modify(int p, int l, int r, int x, int y, int v)
+    {
+        if (vy[l] >= y || vy[r] <= x)
+            return;
+        if (vy[l] >= x && vy[r] <= y)
+        {
+            info[p].cnt += v;
+            pull(p, l, r);
+            return;
+        }
+        int mid = (l + r) >> 1;
+        modify(p << 1, l, mid, x, y, v);
+        modify(p << 1 | 1, mid, r, x, y, v);
+        pull(p, l, r);
+    }
+    void modify(int x, int y, int v)
+    {
+        modify(1, 0, n - 1, x, y, v);
+    }
+    int get_len()
+    {
+        return info[1].len;
+    }
+};
+void solve()
+{
+    int n;
+    cin >> n;
+    vector<array<int, 4>> a;
+    vector<int> vy;
+    for (int i = 1; i <= n; i++)
+    {
+        int x1, x2, y1, y2;
+        cin >> x1 >> y1 >> x2 >> y2;
+        a.push_back({x1, y1, y2, 1});
+        a.push_back({x2, y1, y2, -1});
+        vy.push_back(y1), vy.push_back(y2);
+    }
+    ranges::sort(vy);
+    vy.erase(unique(vy.begin(), vy.end()), vy.end());
+    ranges::sort(a, [&](const array<int, 4> &a, const array<int, 4> &b)
+                 { return a[0] < b[0]; });
+    SegTree T(vy);
+    int ans = 0;
+    for (int i = 0; i < a.size() - 1; i++)
+    {
+        auto [x, yl, yr, v] = a[i];
+        int nxtx = a[i + 1][0];
+        T.modify(yl, yr, v);
+        ans += T.get_len() * (nxtx - x);
+    }
+    cout << ans << '\n';
+}
+signed main()
+{
+    ios::sync_with_stdio(0), cout.tie(0), cin.tie(0);
+    int t = 1;
+    // cin >> t;
+    while (t--)
+        solve();
+    return 0;
+}
