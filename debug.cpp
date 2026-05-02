@@ -1,76 +1,39 @@
 #include <bits/stdc++.h>
+#define int long long
 using namespace std;
 
-struct DSU
-{
-    vector<int> f, siz;
-    int cnt;
-
-    DSU() {}
-    DSU(int n) { init(n); }
-
-    void init(int n)
-    {
-        f.resize(n);
-        iota(f.begin(), f.end(), 0);
-        siz.assign(n, 1);
-        cnt = n;
-    }
-
-    int find(int x)
-    {
-        while (x != f[x])
-        {
-            x = f[x] = f[f[x]];
-        }
-        return x;
-    }
-
-    bool merge(int x, int y)
-    {
-        x = find(x);
-        y = find(y);
-        if (x == y)
-            return 0;
-        siz[x] += siz[y];
-        cnt--;
-        f[y] = x;
-        return 1;
-    }
-
-    int esize(int x)
-    {
-        return siz[find(x)];
-    }
-
-    int count()
-    {
-        return cnt;
-    }
-};
-signed main()
+const int inf = 1e18, mod = 1e9 + 7;
+void solve()
 {
     int n, m;
     cin >> n >> m;
-    vector<array<int, 3>> a(m);
-    for (auto &[x, y, z] : a)
-        cin >> x >> y >> z;
-    ranges::sort(a, [&](array<int, 3> &a, array<int, 3> &b)
-                 { return a[2] > b[2]; });
-    DSU dsu(2 * n + 1);
-    int ans = 0;
-    for (auto [x, y, z] : a)
+    vector pre1(n + 1, vector<int>(m + 1));
+    vector pre2(n + 1, vector<int>(m + 1));
+    for (int i = 1; i <= m; i++)
     {
-        int xx = x + n, yy = y + n;
-        if (dsu.find(x) == dsu.find(y))
+        for (int j = 1; j <= n; j++)
         {
-            cout << z << '\n';
-            return 0;
-        }
-        else
-        {
-            dsu.merge(y, xx), dsu.merge(x, yy);
+            int cur = 0;
+            if (i == j)
+                cur = 1;
+            else if (i > j)
+                cur = pre1[j][i - j];
+
+            pre2[j][i] = (pre2[j - 1][i] + cur) % mod;
+            pre1[j][i] = (pre1[j - 1][i] + pre2[j][i]) % mod;
         }
     }
-    cout << ans << '\n';
+    if (n == m)
+        cout << 1 << '\n';
+    else
+        cout << pre1[n][m - n] << '\n';
+}
+signed main()
+{
+    ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
+    int t = 1;
+    // cin >> t;
+    while (t--)
+        solve();
+    return 0;
 }

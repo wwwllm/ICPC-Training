@@ -2,31 +2,50 @@
 #define int long long
 using namespace std;
 
+// https://codeforces.com/gym/105922
+const int mod = 998244353;
+int exp(int a, int b)
+{
+    int ans = 1;
+    while (b)
+    {
+        if (b & 1)
+            ans = ans * a % mod;
+        a = a * a % mod;
+        b >>= 1;
+    }
+    return ans;
+}
 void solve()
 {
-    int n;
-    cin >> n;
-    auto check = [&](int x)
+    int n, k;
+    cin >> n >> k;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
+    string s;
+    cin >> s;
+    int x = 0;
+    if (s.back() == 's')
     {
-        int a = 4, b = 100;
-        int cnt = 0;
-        while (a <= x)
-        {
-            if (x % a == 0 && x % b != 0)
-                cnt++;
-            a = a * 100, b = b * 100;
-        }
-        return cnt == 1;
-    };
-    int cnt = 0;
-    for (int i = 1; i <= 2024; i++)
+        for (int i = 0; i < n; i++)
+            x += a[i], x %= mod;
+    }
+    else
     {
-        if (!check(i))
+        for (int i = 0; i < n; i++)
         {
-            cnt++;
+            x = x * a[i] % mod;
         }
     }
-    cout << cnt << '\n';
+    for (int i = k - 2; i >= 0; i--)
+    {
+        if (s[i] == 's')
+            x = x * n % mod;
+        else
+            x = exp(x, n);
+    }
+    cout << x << '\n';
 }
 signed main()
 {

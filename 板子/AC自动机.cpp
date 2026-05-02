@@ -1,78 +1,138 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// 自动机：对信号序列进行判定的模型
-// 在文章中找目标字符串出现次数
-const int N = 2e5 + 10;
-int tr[N][26], fi[N], ed[N], idx, cnt[N], ind[N], ans[N];
-void insert(string str, int i)
+struct AC
 {
-    int p = 0;
-    for (auto ele : str)
+    static const int ALPHABET = 26;
+    struct Node
     {
-        int u = ele - 'a';
-        if (!tr[p][u])
-            tr[p][u] = ++idx;
-        p = tr[p][u];
-    }
-    ed[i] = p;
-}
-void setfile()
-{
-    queue<int> q;
-    for (int i = 0; i <= 25; i++)
-        if (tr[0][i])
-            q.push(tr[0][i]), ind[0]++;
-    while (q.size())
+        int len, link;
+        int cnt;
+        array<int, ALPHABET> nxt;
+        Node() : len(0), link(0), nxt{}, cnt(0) {};
+    };
+    vector<Node> t;
+    vector<int> ind;
+    AC()
     {
-        int u = q.front();
-        q.pop();
-        for (int i = 0; i < 26; i++)
-            if (tr[u][i])
-                fi[tr[u][i]] = tr[fi[u]][i], q.push(tr[u][i]), ind[fi[tr[u][i]]]++;
-            else
-                tr[u][i] = tr[fi[u]][i];
+        init();
     }
-}
-void topu()
-{
-    queue<int> q;
-    for (int i = 0; i <= idx; i++)
-        if (!ind[i])
-            q.push(i);
-    while (q.size())
+    void init()
     {
-        int u = q.front();
-        ans[u] += cnt[u];
-        q.pop();
-        int p = fi[u];
-        ind[p]--;
-        ans[p] += ans[u];
-        if (!ind[p])
-            q.push(p);
+        ind.assign(2, 0);
+        t.assign(2, Node());
+        t[0].nxt.fill(1);
+        t[0].len = -1;
     }
-}
+    int newNode()
+    {
+        t.emplace_back();
+        ind.emplace_back(0);
+        return t.size() - 1;
+    }
+    int insert(string &a)
+    {
+        int p = 1;
+        for (auto c : a)
+        {
+            int u = c - 'a';
+            if (next(p, u) == 0)
+            {
+                t[p].nxt[u] = newNode();
+                t[next(p, u)].len = t[p].len + 1;
+            }
+            p = next(p, u);
+        }
+        return p;
+    }
+    void work()
+    {
+        queue<int> q;
+        q.push(1);
+        while (q.size())
+        {
+            int x = q.front();
+            q.pop();
+            for (int i = 0; i < ALPHABET; i++)
+            {
+                if (next(x, i) == 0)
+                {
+                    t[x].nxt[i] = next(link(x), i);
+                }
+                else
+                {
+                    ind[next(link(x), i)]++;
+                    t[next(x, i)].link = next(link(x), i);
+                    q.push(next(x, i));
+                }
+            }
+        }
+    }
+    int next(int p, int x)
+    {
+        return t[p].nxt[x];
+    }
+    int link(int p)
+    {
+        return t[p].link;
+    }
+    int len(int p)
+    {
+        return t[p].len;
+    }
+    int size()
+    {
+        return t.size();
+    }
+    void match(const string &s)
+    {
+        int p = 1;
+        for (auto c : s)
+        {
+            p = next(p, c - 'a');
+            t[p].cnt++;
+        }
+    }
+    void topu()
+    {
+        queue<int> q;
+        for (int i = 1; i < t.size(); i++)
+        {
+            if (ind[i] == 0)
+                q.push(i);
+        }
+        while (q.size())
+        {
+            int u = q.front();
+            q.pop();
+            int v = link(u);
+            t[v].cnt += t[u].cnt;
+            ind[v]--;
+            if (ind[v] == 0)
+            {
+                q.push(v);
+            }
+        }
+    }
+};
 signed main()
 {
     int n;
     cin >> n;
-    for (int i = 1; i <= n; i++)
+    vector<int> pos(n);
+    AC ac;
+    for (int i = 0; i < n; i++)
     {
         string s;
         cin >> s;
-        insert(s, i);
+        pos[i] = ac.insert(s);
     }
-    setfile();
-    string str;
-    cin >> str;
-    int u = 0;
-    for (auto it : str)
-    {
-        u = tr[u][it - 'a'];
-        cnt[u]++;
-    }
-    topu();
-    for (int i = 1; i <= n; i++)
-        cout << ans[ed[i]] << endl;
+    ac.work();
+    string t;
+    cin >> t;
+    ac.match(t);
+    ac.topu();
+    for (int i = 0; i < n; i++)
+        cout << ac.t[pos[i]].cnt << '\n';
     return 0;
 }
