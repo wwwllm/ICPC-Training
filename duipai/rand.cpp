@@ -19,19 +19,12 @@ int randINT(int l, int r)
 
 signed main()
 {
-	int n = randINT(1, 10), k = randINT(1, 10);
-	cout << n << ' ' << k << '\n';
-	for (int i = 0; i < n; i++)
-		cout << randINT(1, 100) << ' ';
-	cout << '\n';
-	string s;
-	for (int i = 0; i < k; i++)
+	cout << 1 << '\n';
+	int n = randINT(1, 10), x = randINT(1, 10), y = randINT(1, 10);
+	cout << n << ' ' << x << ' ' << y << '\n';
+	for (int i = 1; i <= n; i++)
 	{
-		int op = randINT(0, 1);
-		if (op == 0)
-			cout << 's';
-		else
-			cout << 'p';
+		cout << randINT(0, 2);
 	}
 	cout << '\n';
 	return 0;

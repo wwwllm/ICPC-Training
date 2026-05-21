@@ -15,7 +15,8 @@ void solve()
         adj[v].push_back(u);
     }
     vector<int> sz(n + 1), d(n + 1);
-    auto dfs1 = [&](auto &&self, int u, int f) -> void
+    int ans = 0;
+    auto dfs = [&](auto &&self, int u, int f) -> void
     {
         if (adj[u].size() == 1)
             sz[u] = 1;
@@ -31,6 +32,8 @@ void solve()
         {
             if (v == f)
                 continue;
+            if (sz[v] & 1)
+                ans++;
             tmp = max(tmp, d[v] + (sz[v] & 1 ? 1 : -1));
         }
         d[u] = tmp;
@@ -41,25 +44,10 @@ void solve()
         if (adj[i].size() > 1)
         {
             root = i;
-            dfs1(dfs1, root, 0);
+            dfs(dfs, root, 0);
             break;
         }
     }
-    int ans = 0;
-    auto dfs2 = [&](auto &&self, int u, int f) -> void
-    {
-        for (auto v : adj[u])
-        {
-            if (v == f)
-                continue;
-            if (sz[v] & 1)
-            {
-                ans++;
-            }
-            self(self, v, u);
-        }
-    };
-    dfs2(dfs2, root, 0);
     if (sz[root] & 1)
         cout << ans - d[root] << '\n';
     else

@@ -1,39 +1,28 @@
-#include <bits/stdc++.h>
-#define int long long
-using namespace std;
+#include <iostream>
+#include <iomanip>
 
-const int inf = 1e18, mod = 1e9 + 7;
-void solve()
+using i64 = long long;
+
+int main()
 {
-    int n, m;
-    cin >> n >> m;
-    vector pre1(n + 1, vector<int>(m + 1));
-    vector pre2(n + 1, vector<int>(m + 1));
-    for (int i = 1; i <= m; i++)
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+
+    int days = 365;
+    double p = 1.0;
+    int n = 0;
+
+    while (p > 0.5)
     {
-        for (int j = 1; j <= n; j++)
-        {
-            int cur = 0;
-            if (i == j)
-                cur = 1;
-            else if (i > j)
-                cur = pre1[j][i - j];
+        n++;
+        p *= (double)(days - n + 1) / days;
 
-            pre2[j][i] = (pre2[j - 1][i] + cur) % mod;
-            pre1[j][i] = (pre1[j - 1][i] + pre2[j][i]) % mod;
-        }
+        std::cout << n << " " << std::fixed << std::setprecision(9) << (1 - p) << '\n';
     }
-    if (n == m)
-        cout << 1 << '\n';
-    else
-        cout << pre1[n][m - n] << '\n';
-}
-signed main()
-{
-    ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    int t = 1;
-    // cin >> t;
-    while (t--)
-        solve();
+
+    std::cout << n << "\n";
+
     return 0;
 }
+//答案是23
+//说明了在hash表中出现哈希冲突的概率高

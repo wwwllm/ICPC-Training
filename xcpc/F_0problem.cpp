@@ -3,30 +3,50 @@
 using namespace std;
 
 // https://codeforces.com/gym/105910
+const int N = 63;
+vector C(N + 1, vector<int>(N + 1));
+void init()
+{
+    for (int i = 0; i <= N; i++)
+    {
+        C[i][0] = 1;
+        for (int j = 1; j <= i; j++)
+        {
+            C[i][j] = C[i - 1][j] + C[i - 1][j - 1];
+        }
+    }
+}
 void solve()
 {
     int m, k;
     cin >> m >> k;
-
-    auto check = [&](int x, int m) -> bool {
-        
-    };
-    int l = 0, r = 1e18;
-    while (l + 1 != r)
+    if (m == 0)
     {
-        int mid = l + r >> 1;
-        if (check(mid, m))
-            l = mid;
-        else
-            r = mid;
+        cout << 0 << '\n';
+        return;
     }
-    cout << l << '\n';
+    int c = k - 1;
+    int ans = 0;
+    for (int i = 63; i >= 0; i--)
+    {
+        if (c < 0)
+            break;
+        int cnt = C[i][c];
+        if (m > cnt)
+        {
+            ans |= (1LL << i);
+            m -= cnt;
+            c--;
+        }
+    }
+    cout << ans + 1 << '\n';
 }
 signed main()
 {
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     int t = 1;
     cin >> t;
+    init();
     while (t--)
         solve();
     return 0;

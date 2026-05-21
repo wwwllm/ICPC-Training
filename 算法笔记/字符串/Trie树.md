@@ -102,7 +102,7 @@ struct Trie{
 ### 例题链接
 [Luogu P8306 【模板】字典树](https://www.luogu.com.cn/problem/P8306)
 
- # 01-Trie
+# 01-Trie
 
 01-Trie 是一种特殊的字典树，用于维护异或和、位运算相关问题。通常处理整数的二进制位（如从高位到低位 $2^{30} \to 2^0$）。
 
