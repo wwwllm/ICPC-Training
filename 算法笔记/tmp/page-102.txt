@@ -1,0 +1,33 @@
+        int cur = newNode();
+        t[cur].len = t[p].len + 1;
+        while (!next(p, c))
+        {
+            t[p].nxt[c] = cur;
+            p = link(p);
+        }
+        t[cur].link = insert(p, c);
+        return cur;
+    }
+    int next(int p, int x)
+    {
+        return t[p].nxt[x];
+    }
+    int link(int p)
+    {
+        return t[p].link;
+    }
+    int len(int p)
+    {
+        return t[p].len;
+    }
+    int size()
+    {
+        return t.size();
+    }
+};
+字符串哈希 (String Hash)
+实现 (双哈希结构体封装)
+使用两个大质数（如  和 ）进行双哈希，基数通常选取  或 。通过前缀和思
+想实现  复杂度提取子串哈希值。
+10 +9 7 10 +9 9 131 13331
+O(1)

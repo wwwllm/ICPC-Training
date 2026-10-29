@@ -13,6 +13,7 @@ KMP 算法用于在主串中快速查找模式串。其核心在于利用已匹�
 ### 代码
 
 ```cpp
+//f:s[0,i)中匹配的长度
 vector<int> kmp(string s) {
     int n = s.size();
     std::vector<int> f(n + 1);
@@ -25,5 +26,26 @@ vector<int> kmp(string s) {
     }
     return f;
 }
-```
+
+vector<int> match(string s, string p)
+{
+    int n = s.size(), m = p.size();
+    auto f = kmp(p);
+    vector<int> pos;
+    for (int i = 0, j = 0; i < n; i++)
+    {
+        while (j && s[i] != p[j])
+            j = f[j];
+
+        if (s[i] == p[j])
+            j++;
+
+        if (j == m)
+        {
+            pos.push_back(i - m + 1);
+            j = f[j];
+        }
+    }
+    return pos;
+}
 ```

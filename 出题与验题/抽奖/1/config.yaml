@@ -1,0 +1,88 @@
+# ============================================================
+# 抽奖（随机化 + 特殊评测 SPJ）
+# 数据文件夹内应同时存在：config.yaml、chk.cc、dat1.in/dat1.out ... dat21.in/dat21.out
+# 打包：把本文件夹内的文件压成一个 zip 即可上传（路径都是相对的平铺文件名）
+# ============================================================
+
+# 题目类型：default = 比对输出（可以带 SPJ）；另有 objective（客观题）、interactive（交互题）
+type: default
+
+# 全局时空限制（优先级低于子任务/测试点内的同名设置）
+time: 2s
+memory: 256m
+
+# 输入输出文件名：本题使用标准输入输出，故删除 filename 配置项
+# filename: foo
+
+# ---------------- 特殊评测（SPJ） ----------------
+# checker_type 支持 default / ccr / cena / hustoj / lemon / qduoj / syzoj / testlib
+# 本题是多解题（任意合法答案都算对），必须使用 testlib 检查器
+checker_type: testlib
+# 检查器文件路径（相对压缩包根目录）。判题机按扩展名识别语言，
+# 默认配置下 C++ 检查器的扩展名必须是 .cc 而不是 .cpp；testlib.h 无需上传，判题机自带
+checker: chk.cc
+
+# ---------------- 测试点 ----------------
+# 子任务 1：小规模数据（n,Q <= 20000），暴力做法也能通过 → 部分分 30
+# 子任务 2：大数据（n = Q = 1e5），需要真正的做法 → 70 分
+# type: min 表示该子任务内所有测试点都通过才拿到这个子任务的分数
+subtasks:
+  - score: 30
+    type: min
+    time: 2s
+    memory: 256m
+    cases:
+      - input: dat1.in
+        output: dat1.out
+      - input: dat2.in
+        output: dat2.out
+      - input: dat3.in
+        output: dat3.out
+      - input: dat4.in
+        output: dat4.out
+      - input: dat5.in
+        output: dat5.out
+      - input: dat6.in
+        output: dat6.out
+      - input: dat7.in
+        output: dat7.out
+      - input: dat8.in
+        output: dat8.out
+      - input: dat9.in
+        output: dat9.out
+      - input: dat10.in
+        output: dat10.out
+  - score: 70
+    type: min
+    time: 2s
+    memory: 256m
+    cases:
+      - input: dat11.in
+        output: dat11.out
+      - input: dat12.in
+        output: dat12.out
+      - input: dat13.in
+        output: dat13.out
+      - input: dat14.in
+        output: dat14.out
+      - input: dat15.in
+        output: dat15.out
+      - input: dat16.in
+        output: dat16.out
+      - input: dat17.in
+        output: dat17.out
+      - input: dat18.in
+        output: dat18.out
+      - input: dat19.in
+        output: dat19.out
+      - input: dat20.in
+        output: dat20.out
+      - input: dat21.in
+        output: dat21.out
+
+# ---------------- 可选：提交语言限制 ----------------
+# 不写 langs 表示不限制语言。若要限制，需填评测机 lang.yaml 里的语言 ID（不是语言名称），例如：
+# langs:
+#   - c
+#   - cc
+#   - cc.cc11o2

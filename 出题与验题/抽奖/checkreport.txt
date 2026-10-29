@@ -1,0 +1,117 @@
+[编译]
+  编译 std1      1.9s
+  编译 std1_det  1.9s
+  编译 checker1  2.0s
+  编译 brute1    1.6s
+  编译 gen1      2.1s
+  编译 std2      1.7s
+  编译 brute2    1.9s
+  编译 gen2      1.7s
+[生成第一题数据]
+  1/dat1   题面样例
+  1/dat2    n=1，全是单点询问
+  1/dat3    小数据随机（值域 5）
+  1/dat4    中数据随机（值域 3，答案很多）
+  1/dat5    值域 11：出现频率贴近 1/10，答案很少
+  1/dat6    所有数互不相同 → 全是 -1
+  1/dat7    恰好卡在阈值 1/10 上 → 必须全 -1（杀 >= 假做法）
+  1/dat8    恰好卡在阈值 1/4 上 → 必须全 -1
+  1/dat9    每段唯一答案，出现次数 = floor(len/10)+1（刚好超过阈值）
+  1/dat10   阈值 1/3 的唯一答案数据
+  1/dat11   循环 11 个值 + 长区间 → 全是 -1（n=Q=1e5）
+  1/dat12   n=Q=1e5，所有数互不相同 → 全是 -1
+  1/dat13   对抗性：300 个值循环 + 长度 2000 的区间（随机化做法最慢的一类）
+  1/dat14   询问全是 [1,n]
+  1/dat15   询问全是单点 [i,i]
+  1/dat16   每个区间唯一答案（占比约 1/10），必须全部命中
+  1/dat17   n=Q=1e5，值域 9：频率约 11%，答案多且贴近阈值
+  1/dat18   n=Q=1e5，值域 3：答案很多
+  1/dat20   11 个值循环 + 长度 200 的区间（短区间 + 多值混合）
+  1/dat19   所有数都等于 7，每个询问的答案都是 7（含阈值 9/10）
+  1/dat21   p、q 接近 1e9 的大数（验证 64 位乘法）
+[生成第二题数据]
+  2/dat1   题面样例
+  2/dat2    n = 1..12 的所有 k 穷举（暴力可精确对拍）
+  2/dat3    小数据随机 n<=60
+  2/dat4    k 全在 n 附近（卡结论边界），t=1e5
+  2/dat5    n ≡ 0,1,2,3 (mod 4)，k ∈ {0,1,2,n-2,n-1,n,n+1,n+2}
+  2/dat6    固定 n=1
+  2/dat7    固定 n=2
+  2/dat8    固定 n=4
+  2/dat9    固定最大 n=1e9（n ≡ 0 mod 4）
+  2/dat10   n,k ∈ [1,1e9] 随机，t=1e5
+  2/dat11   n 可达 1e9 的随机数据（含大量 k > n）
+  2/dat12   固定 n=999999999（n ≡ 3 mod 4）
+[打包 SPJ 到数据文件夹]
+  1/chk.cc  <-  spj1_testlib.cpp (5499 字节)
+[跑第一题 std 生成 .out]
+  1/dat1.in    .out  0.01s  共 4 行
+  1/dat2.in    .out  0.01s  共 5 行
+  1/dat3.in    .out  0.01s  共 30 行
+  1/dat4.in    .out  0.01s  共 500 行
+  1/dat5.in    .out  0.01s  共 2000 行
+  1/dat6.in    .out  0.01s  共 2000 行
+  1/dat7.in    .out  0.02s  共 1500 行
+  1/dat8.in    .out  0.01s  共 800 行
+  1/dat9.in    .out  0.01s  共 1500 行
+  1/dat10.in   .out  0.01s  共 600 行
+  1/dat11.in   .out  0.16s  共 100000 行
+  1/dat12.in   .out  0.12s  共 100000 行
+  1/dat13.in   .out  0.66s  共 100000 行
+  1/dat14.in   .out  0.15s  共 100000 行
+  1/dat15.in   .out  0.05s  共 100000 行
+  1/dat16.in   .out  0.12s  共 100000 行
+  1/dat17.in   .out  0.10s  共 100000 行
+  1/dat18.in   .out  0.04s  共 100000 行
+  1/dat19.in   .out  0.04s  共 100000 行
+  1/dat20.in   .out  0.15s  共 100000 行
+  1/dat21.in   .out  0.10s  共 100000 行
+[校验第一题]
+  dat1.in    SPJ=ok   确定性做法一致      暴力对拍一致        (Q=4, -1 有 0 个)
+  dat2.in    SPJ=ok   确定性做法一致      暴力对拍一致        (Q=5, -1 有 0 个)
+  dat3.in    SPJ=ok   确定性做法一致      暴力对拍一致        (Q=30, -1 有 1 个)
+  dat4.in    SPJ=ok   确定性做法一致      暴力对拍一致        (Q=500, -1 有 36 个)
+  dat5.in    SPJ=ok   确定性做法一致      暴力对拍一致        (Q=2000, -1 有 1181 个)
+  dat6.in    SPJ=ok   确定性做法一致      暴力对拍一致        (Q=2000, -1 有 1990 个)
+  dat7.in    SPJ=ok   确定性做法一致      暴力对拍一致        (Q=1500, -1 有 1500 个)
+  dat8.in    SPJ=ok   确定性做法一致      暴力对拍一致        (Q=800, -1 有 800 个)
+  dat9.in    SPJ=ok   确定性做法一致      暴力对拍一致        (Q=1500, -1 有 0 个)
+  dat10.in   SPJ=ok   确定性做法一致      暴力对拍一致        (Q=600, -1 有 0 个)
+  dat11.in   SPJ=ok   确定性做法一致      -             (Q=100000, -1 有 100000 个)
+  dat12.in   SPJ=ok   确定性做法一致      -             (Q=100000, -1 有 99995 个)
+  dat13.in   SPJ=ok   确定性做法一致      -             (Q=100000, -1 有 100000 个)
+  dat14.in   SPJ=ok   确定性做法一致      -             (Q=100000, -1 有 100000 个)
+  dat15.in   SPJ=ok   确定性做法一致      -             (Q=100000, -1 有 0 个)
+  dat16.in   SPJ=ok   确定性做法一致      -             (Q=100000, -1 有 79707 个)
+  dat17.in   SPJ=ok   确定性做法一致      -             (Q=100000, -1 有 55119 个)
+  dat18.in   SPJ=ok   确定性做法一致      -             (Q=100000, -1 有 11198 个)
+  dat19.in   SPJ=ok   确定性做法一致      -             (Q=100000, -1 有 0 个)
+  dat20.in   SPJ=ok   确定性做法一致      -             (Q=100000, -1 有 100000 个)
+  dat21.in   SPJ=ok   确定性做法一致      -             (Q=100000, -1 有 32263 个)
+  => 第一题：全部通过
+[校验 1/chk.cc（SPJ）]
+  dat1   正例: ok 4 queries checked         反例: wrong answer query 1: answer is NO
+  dat9   正例: ok 1500 queries checked      反例: wrong answer query 1: answer is NO
+  dat13  正例: ok 100000 queries checked    反例: wrong answer query 1: value 1 appe
+  dat19  正例: ok 100000 queries checked    反例: wrong answer query 1: answer is NO
+  dat21  正例: ok 100000 queries checked    反例: wrong answer query 1: value 1 appe
+  => 1/chk.cc（SPJ）：通过
+[校验配置文件]
+  1/config.yaml：21 个测试点，分数 30+70
+  2/config.yaml：12 个测试点，分数 30+70
+  => 配置与数据一致性：通过
+[跑第二题 std 并校验]
+  2/dat1.in    .out  0.01s  范围check: n<=1e9,k<=1e9 通过(最大 n=6) | 暴力对拍一致 | 样例答案 ['Yes', 'No', 'Yes', 'Yes', 'No']
+  2/dat2.in    .out  0.01s  范围check: n<=1e9,k<=1e9 通过(最大 n=12) | 暴力对拍一致
+  2/dat3.in    .out  0.01s  范围check: n<=1e9,k<=1e9 通过(最大 n=60)
+  2/dat4.in    .out  0.02s  范围check: n<=1e9,k<=1e9 通过(最大 n=999998817)
+  2/dat5.in    .out  0.02s  范围check: n<=1e9,k<=1e9 通过(最大 n=999582607)
+  2/dat6.in    .out  0.01s  范围check: n<=1e9,k<=1e9 通过(最大 n=1) | 暴力对拍一致
+  2/dat7.in    .out  0.01s  范围check: n<=1e9,k<=1e9 通过(最大 n=2) | 暴力对拍一致
+  2/dat8.in    .out  0.01s  范围check: n<=1e9,k<=1e9 通过(最大 n=4) | 暴力对拍一致
+  2/dat9.in    .out  0.02s  范围check: n<=1e9,k<=1e9 通过(最大 n=1000000000)
+  2/dat10.in   .out  0.02s  范围check: n<=1e9,k<=1e9 通过(最大 n=999991047)
+  2/dat11.in   .out  0.02s  范围check: n<=1e9,k<=1e9 通过(最大 n=999994546)
+  2/dat12.in   .out  0.03s  范围check: n<=1e9,k<=1e9 通过(最大 n=999999999)
+  => 第二题：全部通过
+完成。

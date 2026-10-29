@@ -1,0 +1,8 @@
+# 自动编译产物与调试
+*.exe
+*.out
+*.o
+*.dSYM/
+debug
+debug.exe
+output/

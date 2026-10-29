@@ -1,0 +1,4 @@
+interface:
+  display_name: "XCPC 模板编写"
+  short_description: "按既有笔记风格编写简洁可靠的 XCPC 算法模板与笔记"
+  default_prompt: "使用 $write-xcpc-template 编写一份与现有笔记风格一致的算法模板。"

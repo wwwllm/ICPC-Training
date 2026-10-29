@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "23b6fdacf2ab2612",
+        "id": "3875e76acb5f62ab",
         "type": "tabs",
         "children": [
           {
-            "id": "88c945c438446a42",
+            "id": "110dbe011d8f2044",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "图论/Kruskal重构树.md",
+                "file": "图论/网络流/费用流.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kruskal重构树"
+              "title": "费用流"
             }
           }
         ]
@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -53,7 +55,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:数学，快速幂",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -170,43 +172,53 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "88c945c438446a42",
+  "active": "110dbe011d8f2044",
   "lastOpenFiles": [
-    "基于有限自动机（DFA）的正则表达式匹配系统.md",
-    "download.gif",
-    "数论/普通生成函数.md",
-    "数论/二项式反演.md",
-    "数论/矩阵快速幂.md",
-    "字符串/AC自动机.md",
+    "图论/连通性相关/边双连通分量.md",
+    "图论/连通性相关/点双连通分量.md",
+    "图论/连通性相关/强连通分量.md",
     "数据结构/线段树.md",
-    "图论/树上问题/重链剖分.md",
-    "图论/树上问题/LCA.md",
-    "图论/网络流/费用流.md",
-    "icpc成都.md",
-    "ACM模板.md",
-    "图论/最短路/Dijkstra 算法.md",
-    "数据结构/权值线段树.md",
-    "图论/网络流/Hall定理.md",
-    "图论/最短路/Johnson 算法.md",
-    "图论/最短路/SPFA算法.md",
-    "图论/最小生成树.md",
-    "杂项/扫描线.md",
-    "杂项/异或哈希.md",
     "杂项/指数哈希.md",
-    "杂项/字符串哈希.md",
-    "字符串/Trie树.md",
-    "字符串/KMP算法.md",
-    "字符串/后缀自动机.md",
+    "计算几何.md",
+    "数论/int128类定义.md",
+    "output/md/算法模板汇总.md",
+    "output/md/算法模板汇总.pdf",
+    "图论/网络流/EK算法.md",
+    "数论/快速数论变换（NTT）.md",
+    "数论/快速傅里叶变换（FFT）.md",
+    "数据结构/莫队.md",
+    "数论/莫比乌斯反演.md",
+    "数论/数论分块.md",
+    "数论/拉格朗日插值.md",
+    "数论/普通生成函数.md",
+    "数论/扩展欧几里得算法.md",
+    "数论/矩阵快速幂.md",
+    "数论/二项式反演.md",
+    "字符串/后缀数组.md",
     "字符串/字符串哈希.md",
-    "图论/连通性相关",
-    "图论/网络流",
-    "字符串/未命名",
-    "字符串",
-    "未命名.base",
-    "杂项",
-    "数据结构",
-    "数论",
-    "动态规划/背包问题",
-    "动态规划"
+    "图论/最小生成树.md",
+    "图论/欧拉路径与欧拉回路.md",
+    "图论/连通性相关/圆方树.md",
+    "tmp/toc-map-page-52.txt",
+    "tmp/toc-map-page-51.txt",
+    "tmp/toc-map-page-50.txt",
+    "tmp/pdf-review/page-16-254.png",
+    "tmp/pdf-review/page-16-253.png",
+    "tmp/pdf-review/page-16-252.png",
+    "tmp/pdf-review/page-16-251.png",
+    "tmp/pdf-review/page-16-250.png",
+    "tmp/pdf-review/page-16-249.png",
+    "tmp/pdf-review/page-16-248.png",
+    "tmp/pdf-review/page-16-247.png",
+    "tmp/pdf-review/page-16-246.png",
+    "tmp/pdf-review/page-16-245.png",
+    "tmp/pdf-review",
+    "tmp/page-105.txt",
+    "tmp/page-104.txt",
+    "tmp/page-103.txt",
+    "tmp/page-102.txt",
+    "tmp/decoded.pdf",
+    "软件测试作业1.md",
+    "数据结构/并查集.md"
   ]
 }

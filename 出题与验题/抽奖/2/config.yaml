@@ -1,0 +1,48 @@
+# ============================================================
+# 最后一个数（猜结论题，普通比对评测，不需要 SPJ）
+# 数据文件夹内应同时存在：config.yaml、dat1.in/dat1.out ... dat12.in/dat12.out
+# ============================================================
+
+type: default
+
+time: 1s
+memory: 256m
+
+# 本题使用标准输入输出，故删除 filename 配置项
+
+# 直接比对输出（忽略行末空格和文件末换行），答案只有 Yes / No
+checker_type: default
+
+subtasks:
+  # 小 n（n <= 12，可以暴力枚举所有操作顺序）→ 部分分
+  - score: 30
+    type: min
+    cases:
+      - input: dat1.in
+        output: dat1.out
+      - input: dat2.in
+        output: dat2.out
+      - input: dat6.in
+        output: dat6.out
+      - input: dat7.in
+        output: dat7.out
+      - input: dat8.in
+        output: dat8.out
+  # 一般数据：n <= 1e9，需要得出结论
+  - score: 70
+    type: min
+    cases:
+      - input: dat3.in
+        output: dat3.out
+      - input: dat4.in
+        output: dat4.out
+      - input: dat5.in
+        output: dat5.out
+      - input: dat9.in
+        output: dat9.out
+      - input: dat10.in
+        output: dat10.out
+      - input: dat12.in
+        output: dat12.out
+      - input: dat11.in
+        output: dat11.out

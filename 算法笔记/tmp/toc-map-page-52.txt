@@ -1,0 +1,78 @@
+    {
+        vale ^= (i + 1) * (e[i] + 1);
+    }
+    cout << valz << '\n'
+         << vale << '\n';
+}
+signed main()
+{
+    ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
+    int t = 1;
+    // cin >> t;
+    while (t--)
+        solve();
+    return 0;
+}
+ST 表
+定义
+ST 表用于在不可修改的序列上查询区间最小值。数组采用 0 下标， query(l, r)  查询非空半开区间  [l, r) ；预处理时间和空间复杂度均为
+，单次查询时间复杂度为 。
+实现
+ st[k][i]  维护区间  的最小值。查询时令 ，合并分别贴近左右端点的两个长度为  的区间；由于最小值运算满
+足幂等性，两个区间重叠不会影响答案。
+代码
+struct ST
+{
+    int n, K;
+    vector<vector<int>> st;
+    vector<int> lg;
+    ST() {}
+    ST(int n)
+    {
+        vector<int> a(n, inf);
+        init(a);
+    }
+    ST(vector<int> &a)
+    {
+        init(a);
+    }
+    void init(vector<int> &a)
+    {
+        n = a.size();
+        lg.resize(n + 1);
+        for (int i = 2; i <= n; i++)
+            lg[i] = lg[i >> 1] + 1;
+        int K = lg[n] + 1;
+        st.assign(K, vector<int>(n));
+        for (int i = 0; i < n; i++)
+        {
+            st[0][i] = a[i];
+        }
+        for (int k = 1; k < K; k++)
+        {
+            for (int i = 0; i + (1LL << k) <= n; i++)
+            {
+                st[k][i] = min(st[k - 1][i],
+                               st[k - 1][i + (1LL << (k - 1))]);
+            }
+        }
+    }
+    int query(int l, int r)
+    {
+        int k = lg[r - l];
+        return min(st[k][l], st[k][r - (1LL << k)]);
+    }
+};
+主席树
+定义
+主席树全称是可持久化权值线段树。它的核心任务是：每插入一个数，都要保留一个节点的线段树版本。
+可以实现区间第k小查询。
+实现
+暴力想法：每插入一个数就新开一棵动态开点线段树。  个数就是 ，内存瞬间爆炸。
+复用节点： 当你修改一个节点时，从根到叶子只有  个节点会变。剩下的子树和前一个版本一模一样！ 我们只需要新建这  个节
+点，让新节点的左右指针指向前一个版本中没变过的儿子节点即可。
+O(n logn) O(1)
+[i, i + 2 )k k = ⌊log ​(r −2 l)⌋ 2k
+N N × (N log V )
+log V log V
+第 52 / 100 页

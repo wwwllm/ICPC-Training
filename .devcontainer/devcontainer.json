@@ -1,23 +1,34 @@
 {
-    "name": "ACM C++ (GCC 15)",
+    "name": "ACM C++ & Go (GCC 15 / Go 1.26)",
     "build": {
         "dockerfile": "Dockerfile"
     },
     "customizations": {
         "vscode": {
-            // 在容器内自动安装的插件
+            // 保留原有扩展，并加入 Go 官方扩展。
             "extensions": [
                 "ms-vscode.cpptools",
                 "ms-vscode.cpptools-extension-pack",
                 "formulahendry.code-runner",
-                "christian-kohler.path-intellisense"
+                "christian-kohler.path-intellisense",
+                "golang.go"
             ],
             "settings": {
-                // 设置 C++ 标准为 C++23 或更高
+                // 保留原有 C++23 配置。
                 "C_Cpp.default.cppStandard": "c++23",
                 "files.associations": {
                     "iostream": "cpp"
-                }
+                },
+                // Go 文件保存时使用官方格式化工具，并整理 import。
+                "[go]": {
+                    "editor.defaultFormatter": "golang.go",
+                    "editor.formatOnSave": true,
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": "explicit"
+                    }
+                },
+                "go.formatTool": "gofmt",
+                "go.toolsManagement.autoUpdate": true
             }
         }
     },

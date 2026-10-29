@@ -1,0 +1,31 @@
+    for (int i = 0; i < m; i++)
+    {
+        valz ^= (i + 1) * (z[i] + 1);
+    }
+    int vale = 0;
+    for (int i = 0; i < n; i++)
+    {
+        vale ^= (i + 1) * (e[i] + 1);
+    }
+    cout << valz << '\n'
+         << vale << '\n';
+}
+signed main()
+{
+    ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
+    int t = 1;
+    // cin >> t;
+    while (t--)
+        solve();
+    return 0;
+}
+ST 表
+定义
+ST 表用于在不可修改的序列上查询区间最小值。数组采用 0 下标， query(l, r)  查询非空半开区间
+ [l, r) ；预处理时间和空间复杂度均为 ，单次查询时间复杂度为 。
+实现
+ st[k][i]  维护区间  的最小值。查询时令 ，合并分别贴近左右端点的两
+个长度为  的区间；由于最小值运算满足幂等性，两个区间重叠不会影响答案。
+O(n log n) O(1)
+[i, i + 2 )k k = ⌊log ​(r −2 l)⌋
+2k
