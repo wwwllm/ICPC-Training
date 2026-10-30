@@ -1,8 +1,97 @@
-# 自动编译产物与调试
+# ==========================================
+# 1. 忽略无后缀的 Linux / Docker 编译产物与临时文件
+# ==========================================
+*
+!*/
+
+# 放行常见无后缀特殊文件
+!LICENSE
+!Makefile
+!Dockerfile
+
+# ==========================================
+# 2. 源码、文档与资源白名单
+# ==========================================
+# C/C++ 源码与头文件
+!*.cpp
+!*.cc
+!*.c
+!*.h
+!*.hpp
+
+# 脚本与构建配置
+!*.py
+!*.sh
+!*.bat
+!*.js
+!*.go
+!*.java
+
+# 文档、笔记与文本数据
+!*.md
+!*.txt
+!*.pdf
+!*.base
+!*.in
+!*.ans
+
+# 图像与媒体
+!*.png
+!*.jpg
+!*.jpeg
+!*.gif
+
+# 项目及版本控制配置
+!.gitignore
+!*.json
+!*.yaml
+!*.yml
+!*.cbp
+!*.layout
+
+# ==========================================
+# 3. 显式黑名单（即便在上述扩展名内也必须忽略）
+# ==========================================
+# 常见编译产物与中间二进制
 *.exe
 *.out
 *.o
+*.obj
+*.bin
+*.class
+*.jar
 *.dSYM/
-debug
-debug.exe
-output/
+*.zip
+
+# 编辑器与 IDE 配置目录及文件
+.vscode/
+**/.vscode/
+.idea/
+**/.idea/
+.vs/
+**/.vs/
+*.sublime-project
+*.sublime-workspace
+
+# 刷题插件缓存与评测测试点数据 (CPH 等)
+.cph/
+**/.cph/
+.cph-ng/
+**/.cph-ng/
+*.prob
+
+# Obsidian 软件内部配置
+.obsidian/
+**/.obsidian/
+
+# 操作系统临时文件
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# 本地个人配置与敏感环境变量
+*.local
+*.local.*
+.env
+.env.*
+!.env.example
