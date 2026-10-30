@@ -101,3 +101,7 @@ Desktop.ini
 .env
 .env.*
 !.env.example
+
+# 本地运行配置（FAST Olympic Coding 插件设置，不上传）
+runSettings.json
+**/runSettings.json
