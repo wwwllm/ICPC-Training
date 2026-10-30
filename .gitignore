@@ -7,7 +7,13 @@
 # 放行常见无后缀特殊文件
 !LICENSE
 !Makefile
-!Dockerfile
+
+# 容器与环境配置忽略
+.devcontainer/
+**/.devcontainer/
+Dockerfile
+docker-compose*.yml
+docker-compose*.yaml
 
 # ==========================================
 # 2. 源码、文档与资源白名单
