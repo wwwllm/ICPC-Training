@@ -1,53 +1,36 @@
 # ==========================================
-# 1. 忽略无后缀的 Linux / Docker 编译产物与临时文件
+# 1. 忽略无后缀的 Linux / Mac 可执行文件
 # ==========================================
 *
 !*/
 
-# 放行常见无后缀特殊文件
+# 常见无后缀说明文件放行
 !LICENSE
 !Makefile
 
-# 容器与环境配置忽略
-.devcontainer/
-**/.devcontainer/
-Dockerfile
-docker-compose*.yml
-docker-compose*.yaml
-
 # ==========================================
-# 2. 源码、文档与资源白名单
+# 2. XCPC 源码、文档与对拍测试点白名单
 # ==========================================
-# C/C++ 源码与头文件
+# C/C++ 源码及头文件
 !*.cpp
 !*.cc
 !*.c
 !*.h
 !*.hpp
 
-# 脚本与构建配置
+# 竞赛脚本与对拍生成器（Python / Shell / Bat）
 !*.py
 !*.sh
 !*.bat
-!*.js
-!*.go
-!*.java
 
-# 文档、笔记与文本数据
+# 题解笔记与输入输出测试样例
 !*.md
 !*.txt
 !*.pdf
-!*.base
 !*.in
 !*.ans
 
-# 图像与媒体
-!*.png
-!*.jpg
-!*.jpeg
-!*.gif
-
-# 项目及版本控制配置
+# 代码模板/配置文件/IDE 工程
 !.gitignore
 !*.json
 !*.yaml
@@ -55,47 +38,59 @@ docker-compose*.yaml
 !*.cbp
 !*.layout
 
+# 题解配图
+!*.png
+!*.jpg
+!*.jpeg
+!*.gif
+
 # ==========================================
-# 3. 显式黑名单（即便在上述扩展名内也必须忽略）
+# 3. 显式黑名单（即便在上述白名单内也必须忽略）
 # ==========================================
-# 常见编译产物与中间二进制
+# 编译可执行文件与符号（Win/Mac/Linux）
 *.exe
 *.out
+a.out
+*.out.dSYM/
+*.dSYM/
 *.o
 *.obj
 *.bin
-*.class
-*.jar
-*.dSYM/
-*.zip
 
-# 编辑器与 IDE 配置目录及文件
-.vscode/
-**/.vscode/
-.idea/
-**/.idea/
-.vs/
-**/.vs/
-*.sublime-project
-*.sublime-workspace
+# 对拍/评测产生的临时对比文件
+*.diff
+*.tmp
+*.temp
 
-# 刷题插件缓存与评测测试点数据 (CPH 等)
+# 刷题插件缓存（CPH / Competitive Programming Helper）
 .cph/
 **/.cph/
 .cph-ng/
 **/.cph-ng/
 *.prob
 
-# Obsidian 软件内部配置
+# 本地编辑器及双端操作系统垃圾
+*.bak
 .obsidian/
 **/.obsidian/
-
-# 操作系统临时文件
+.vscode/
+**/.vscode/
+.devcontainer/
+**/.devcontainer/
+Dockerfile
+docker-compose*.yml
+docker-compose*.yaml
+.idea/
+**/.idea/
+.vs/
+**/.vs/
 .DS_Store
+**/.DS_Store
+._*
 Thumbs.db
 Desktop.ini
 
-# 本地个人配置与敏感环境变量
+# 本地个人敏感文件
 *.local
 *.local.*
 .env
