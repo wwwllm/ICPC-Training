@@ -17,7 +17,9 @@ void init()
             int mi = (i + 1) * i / 2, mx = i * (2 * l - i + 1) / 2;
             for (int s = mi; s <= mx; s++)
             {
-                cnt[l][i][s] = (cnt[l - 1][i][s] + cnt[l - 1][i - 1][s - i]) % mod;
+                cnt[l][i][s] = cnt[l - 1][i][s];
+                if (s >= l)
+                    (cnt[l][i][s] += cnt[l - 1][i - 1][s - l]) %= mod;
             }
         }
     }
@@ -44,7 +46,7 @@ void solve()
     a[0] = {1, 0};
     for (int i = 1; i <= m; i++)
     {
-        if (a[i][1] >= (a[i][0] - 1) * a[i][0] / 2)
+        if (a[i][1] > (a[i][0] - 1) * a[i][0] / 2)
         {
             cout << 0 << '\n';
             return;
@@ -62,6 +64,8 @@ void solve()
         vector<int> ndp(n + 1);
         int d = a[i][0] - a[i - 1][0];
         int s = a[i][1] - a[i - 1][1];
+        if (d == 0)
+            continue;
         int l = max(0LL, (s - (d + 1) * d / 2) / d), r = min((s + d - 1) / d, n);
         for (int x = l; x <= r; x++)
         {
